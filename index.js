@@ -41,7 +41,9 @@ module.exports = function (str, options) {
 	urlObj.hostname = punycode.toUnicode(urlObj.hostname).toLowerCase();
 
 	// remove `www.`
-	urlObj.hostname = urlObj.hostname.replace(/^www\./, '');
+	if (! options.preserveHost) {
+		urlObj.hostname = urlObj.hostname.replace(/^www\./, '');
+	}
 
 	// remove URL with empty query string
 	if (urlObj.search === '?') {

@@ -25,6 +25,9 @@ normalizeUrl('HTTP://xn--xample-hva.com:80/?b=bar&a=foo');
 
 normalizeUrl('www.example.com');
 //=> http://example.com/
+
+normalizeUrl('www.example.com', { preserveHost: true});
+//=> http://www.example.com/
 ```
 
 
