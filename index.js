@@ -11,9 +11,15 @@ var DEFAULT_PORTS = {
 	'ftp:': 21
 };
 
-module.exports = function (str) {
+module.exports = function (str, options) {
 	if (typeof str !== 'string') {
 		throw new TypeError('Expected a string');
+	}
+	if (!options) {
+		options = {};
+	}
+	if (typeof options !== 'object') {
+		throw new TypeError('Expected an object');
 	}
 
 	// prepend protocol
