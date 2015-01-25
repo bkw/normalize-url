@@ -22,6 +22,9 @@ normalizeUrl('sindresorhus.com');
 
 normalizeUrl('HTTP://xn--xample-hva.com:80/?b=bar&a=foo');
 //=> http://êxample.com/?a=foo&b=bar
+
+normalizeUrl('www.example.com');
+//=> http://example.com/
 ```
 
 
