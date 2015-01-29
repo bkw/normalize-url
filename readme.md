@@ -28,6 +28,9 @@ normalizeUrl('www.example.com');
 
 normalizeUrl('www.example.com', { preserveHost: true});
 //=> http://www.example.com/
+
+normalizeUrl('http://example.com/?b=bar&a=foo', { preserveKeyOrder: true});
+//=> http://example.com/?b=bar&a=foo
 ```
 
 

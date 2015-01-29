@@ -51,7 +51,9 @@ module.exports = function (str, options) {
 	}
 
 	// sort query parameters
-	urlObj.search = queryString.stringify(sortKeys(queryString.parse(urlObj.search)));
+	if (! options.preserveKeyOrder) {
+		urlObj.search = queryString.stringify(sortKeys(queryString.parse(urlObj.search)));
+  }
 
 	// decode query parameters
 	urlObj.search = decodeURIComponent(urlObj.search);
